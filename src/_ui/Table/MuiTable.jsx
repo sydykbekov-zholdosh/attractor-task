@@ -45,11 +45,13 @@ const MuiTable = ({ data, columns, onRowClick }) => {
             ))
           ) : (
             <TableRow>
-              <Grid container justify="center" alignItems="center" direction="row" style={{ height: 50 }}>
-                <Grid item>
-                  <Typography children={'Нет данных'} color="textSecondary"/>
+              <TableCell>
+                <Grid container justify="center" alignItems="center" direction="row" style={{ height: 50 }}>
+                  <Grid item>
+                    <Typography children={'Нет данных'} color="textSecondary"/>
+                  </Grid>
                 </Grid>
-              </Grid>
+              </TableCell>
             </TableRow>
           )}
         </TableBody>

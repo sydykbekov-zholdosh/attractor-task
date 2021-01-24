@@ -26,7 +26,6 @@ export const getUsers = username => async dispatch => {
   try {
     dispatch({ type: LOADING, loading: true });
     const response = await UsersApi.getUsers(username);
-    console.log(response);
     dispatch({ type: USERS, ...response.data });
   } catch (error) {
     handleError(error, 'Не удалось загрузить пользователей!');
