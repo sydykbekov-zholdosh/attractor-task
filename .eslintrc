@@ -1,0 +1,12 @@
+{
+  "extends": "react-app",
+  "plugins": [
+    "react-hooks"
+  ],
+  "rules": {
+    // Checks rules of Hooks
+    "react-hooks/rules-of-hooks": "error",
+    // Checks effect dependencies
+    "react-hooks/exhaustive-deps": "warn"
+  }
+}
