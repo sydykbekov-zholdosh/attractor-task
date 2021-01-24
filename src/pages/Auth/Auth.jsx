@@ -9,7 +9,7 @@ import { authModule } from './AuthDucks';
 import { StyledTitle } from './AuthStyle';
 import { baseURL } from '../../_helpers/service';
 
-const AUTH_URL = `${baseURL}login/oauth/authorize?client_id=${GitHub.clientId}&redirect_uri=http://localhost:3000/login`;
+const AUTH_URL = `${baseURL}login/oauth/authorize?client_id=${GitHub.clientId}&scope=user,repo&redirect_uri=http://localhost:3000/login`;
 
 function Auth() {
   const { loadingAuth } = useSelector(state => state[authModule]);

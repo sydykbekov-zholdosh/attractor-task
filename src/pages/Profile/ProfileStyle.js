@@ -5,7 +5,7 @@ export const StyledProfile = styled.div`
   
   img {
     width: 225px;
-    height: 265px;
+    height: 225px;
     border-radius: 7px;
     margin-bottom: 20px;
   }

@@ -1,5 +1,6 @@
 import { createReducer } from 'redux-starter-kit';
 
+import Notice from '../../utlis/Notice';
 import { USER } from '../Auth/AuthDucks';
 import { ProfileApi } from './ProfileApi';
 import { handleError } from '../../utlis/handleError';
@@ -28,6 +29,7 @@ export const updateProfile = formData => async dispatch => {
     };
     const response = await ProfileApi.update(data);
     dispatch({ type: USER, user: response.data });
+    Notice.success('Данные успешно сохранены!');
   } catch (error) {
     handleError(error, 'Не удалось сохранить данные пользователя');
   } finally {
