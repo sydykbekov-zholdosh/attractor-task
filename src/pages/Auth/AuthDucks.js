@@ -11,7 +11,7 @@ import { history } from '../../_helpers/history';
  */
 
 export const authModule = 'login';
-const USER = `${authModule}/USER`;
+export const USER = `${authModule}/USER`;
 const LOGOUT = `${authModule}/LOGOUT`;
 const LOADING = `${authModule}/LOADING`;
 
