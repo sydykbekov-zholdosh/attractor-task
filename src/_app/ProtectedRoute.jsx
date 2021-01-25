@@ -21,10 +21,6 @@ export const ProtectedRoute = ({ component: Component, ...rest }) => {
           return <Redirect to={paths.login}/>;
         }
 
-        if (rest.user && rest.path === paths.login) {
-          return <Redirect to={paths.profile}/>;
-        }
-
         return <Component {...routeProps} />;
       }}
     />

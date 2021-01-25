@@ -12,14 +12,14 @@ import { baseURL } from '../../_helpers/service';
 const AUTH_URL = `${baseURL}login/oauth/authorize?client_id=${GitHub.clientId}&scope=user,repo&redirect_uri=http://localhost:3000/login`;
 
 function Auth() {
-  const { loadingAuth } = useSelector(state => state[authModule]);
+  const { loading } = useSelector(state => state[authModule]);
 
   return (
     <Paper className="p4 m-auto center">
       <StyledTitle children="Авторизация"/>
       <LoadingButton
         href={AUTH_URL}
-        pending={loadingAuth}
+        pending={loading}
         color="secondary"
         variant="contained"
         pendingPosition="start"

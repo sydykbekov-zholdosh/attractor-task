@@ -30,7 +30,7 @@ function Root({ auth, getUser, ...props }) {
       <div className="flex grow1">
         {props.user && <Route exact path={sideBarPaths} component={SideBar}/>}
         <Switch>
-          <ProtectedRoute exact {...props} {...routerProps.login} />
+          <Route exact {...props} {...routerProps.login} />
           <ProtectedRoute exact {...props} {...routerProps.profile} />
           <ProtectedRoute exact {...props} {...routerProps.repos} />
           <ProtectedRoute exact {...props} {...routerProps.users} />

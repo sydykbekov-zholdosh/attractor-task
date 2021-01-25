@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppBar } from '@material-ui/core';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
@@ -7,7 +8,8 @@ import paths from '../../_helpers/paths';
 import { Logo, StyledToolbar } from './HeaderStyle';
 import { authModule, logout } from '../../pages/Auth/AuthDucks';
 
-function HeaderWithoutAuth() {
+function Header() {
+  const { pathname } = useLocation();
   const { user } = useSelector(state => state[authModule]);
   const dispatch = useDispatch();
 
@@ -21,7 +23,7 @@ function HeaderWithoutAuth() {
           </Logo>
         </div>
         <ul>
-          {user && (
+          {(user && pathname !== paths.login) && (
             <li onClick={() => dispatch(logout())}>
                 <span className="icon-span">
                   <ExitToAppIcon className="icon"/>
@@ -35,4 +37,4 @@ function HeaderWithoutAuth() {
   );
 }
 
-export default HeaderWithoutAuth;
+export default Header;

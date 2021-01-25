@@ -21,7 +21,7 @@ const LOADING = `${authModule}/LOADING`;
 
 const initialState = {
   user: null,
-  loading: false
+  loading: true
 };
 
 export default createReducer(initialState, {
@@ -51,6 +51,7 @@ export const auth = code => async dispatch => {
     if (response.data.access_token) {
       localStorage.setItem('accessToken', response.data.access_token);
       await dispatch(getUser());
+      history.push(paths.profile);
     } else {
       history.push(paths.login);
       handleError(response, 'Не удалось авторизоваться!');
